@@ -1,6 +1,6 @@
-package chap05;
+package chap06;
 
-public class BubbleSort {
+public class BubbleSort2 {
     
     static void swap(int[] array, int idx1, int idx2) {
         int tmp = array[idx1];
@@ -10,11 +10,14 @@ public class BubbleSort {
     
     static void bubbleSort(int[] array, int n) {
         for (int i = 0; i < n - 1; i++) {
+            int exchg = 0;
             for (int j = n - 1; j > i; j--) {
                 if(array[j - 1] > array[j]) {
                     swap(array, j - 1, j);
+                    exchg++;
                 }
             }
+            if(exchg == 0) break;
         }
     }
     

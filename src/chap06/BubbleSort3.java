@@ -1,6 +1,6 @@
-package chap05;
+package chap06;
 
-public class BubbleSort2 {
+public class BubbleSort3 {
     
     static void swap(int[] array, int idx1, int idx2) {
         int tmp = array[idx1];
@@ -9,21 +9,22 @@ public class BubbleSort2 {
     }
     
     static void bubbleSort(int[] array, int n) {
-        for (int i = 0; i < n - 1; i++) {
-            int exchg = 0;
-            for (int j = n - 1; j > i; j--) {
-                if(array[j - 1] > array[j]) {
-                    swap(array, j - 1, j);
-                    exchg++;
+        int k = 0;
+        while (k < n - 1) {
+            int last = n - 1;
+            for (int i = n - 1; i > k; i--) {
+                if(array[i - 1] > array[i]) {
+                    swap(array, i - 1, i);
+                    last = i;
                 }
             }
-            if(exchg == 0) break;
+            k = last;
         }
     }
     
     public static void main(String[] args) {
         int[] array = new int[]{22, 5, 11, 32, 120, 68, 70};
-        System.out.println("버블 정렬(버전 1)");
+        System.out.println("버블 정렬(버전 3)");
         
         bubbleSort(array, array.length);
     

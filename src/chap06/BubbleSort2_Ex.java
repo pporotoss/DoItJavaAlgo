@@ -1,4 +1,4 @@
-package chap05;
+package chap06;
 
 public class BubbleSort2_Ex {
     
